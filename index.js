@@ -90,6 +90,26 @@ app.get('/get-users',(req,res)=>{
     })
 })
 
+
+
+app.get('/update-user',async (req,res)=>{
+   await  userModel.findOneAndUpdate({
+        username:"sha"
+    },{
+        email:"rishav7@gmail.com"
+    })
+
+    res.send("user updated")
+})
+
+app.get('delete-user',async (req,res)=>{
+    await userModel.findOneAndDelete({
+        username:""
+    })
+  res.send('user deleted')
+})
+
+
 app.get('/about',(req,res)=>{
     res.send('About page ')
 })
