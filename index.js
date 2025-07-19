@@ -79,9 +79,14 @@ app.post('/register',async (req,res)=>{
 
 
 app.get('/get-users',(req,res)=>{
-    userModel.find()
-    .then((users)=>{
-        res.send(users)
+    // userModel.find()
+    // .then((users)=>{
+    //     res.send(users)
+    // })
+
+    userModel.findOne({})
+    .then((user)=>{
+        res.send(user)
     })
 })
 
